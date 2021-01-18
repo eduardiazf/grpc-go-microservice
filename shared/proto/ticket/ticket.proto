@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ticket;
+
+option go_package = "shared/proto/ticket";
+
+service TicketService {
+  rpc CreateTicket (CreateTicketRequest) returns (CreateTicketResponse) {}
+}
+
+message Ticket {
+  string note = 1;
+}
+
+message CreateTicketRequest {
+  Ticket data = 1;
+}
+
+message CreateTicketResponse {
+  Ticket object = 1;
+}
